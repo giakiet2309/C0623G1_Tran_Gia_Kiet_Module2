@@ -1,3 +1,4 @@
+package ss01_introduction_to_java.practice;
 import java.util.Scanner;
 
 public class leap_year_calculator {

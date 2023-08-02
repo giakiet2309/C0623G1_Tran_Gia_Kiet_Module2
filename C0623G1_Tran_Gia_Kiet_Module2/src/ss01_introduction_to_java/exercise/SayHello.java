@@ -1,3 +1,4 @@
+package ss01_introduction_to_java.exercise;
 import java.util.Scanner;
 public class SayHello {
     public static void main(String[] args) {

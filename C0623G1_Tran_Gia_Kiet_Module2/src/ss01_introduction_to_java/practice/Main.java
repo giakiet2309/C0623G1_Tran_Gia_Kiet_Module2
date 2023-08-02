@@ -1,3 +1,4 @@
+package ss01_introduction_to_java.practice;
 public class Main {
     public static void main(String[] args) {
         int i = 10; // khai báo biến i là kiểu int có giá trị là 10

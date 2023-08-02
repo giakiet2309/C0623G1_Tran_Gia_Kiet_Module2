@@ -1,6 +1,5 @@
-
-
-        import java.util.Scanner;
+package ss01_introduction_to_java.practice;
+import java.util.Scanner;
 
 public class linear_equation_resolver {
 
