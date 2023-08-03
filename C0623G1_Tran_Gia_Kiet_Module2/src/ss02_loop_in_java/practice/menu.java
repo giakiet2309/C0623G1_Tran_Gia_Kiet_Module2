@@ -1,11 +1,12 @@
 package ss02_loop_in_java.practice;
+
 import java.util.Scanner;
 
 public class menu {
     public static void main(String[] args) {
         int choice = -1;
         Scanner input = new Scanner(System.in);
-        while(choice != 0) {
+        while (choice != 0) {
             System.out.println("Menu");
             System.out.println("1. Draw the triangle");
             System.out.println("2. Draw the square");
