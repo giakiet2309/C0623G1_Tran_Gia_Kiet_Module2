@@ -7,13 +7,13 @@ public class MinValueInArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Mời nhập vào số lượng phần tử trong mảng : ");
-        int length = Integer.parseInt(scanner.nextLine());
+        int length = Integer.parseInt(scanner.next());
 
         int[] arr = new int[length];
 
         for (int i = 0; i < length; i++) {
             System.out.print("Mời nhập vào phần tử thứ " + (i + 1) + " : ");
-            arr[i] = Integer.parseInt(scanner.nextLine());
+            arr[i] = Integer.parseInt(scanner.next());
         }
         print(arr);
         System.out.println("");
