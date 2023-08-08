@@ -58,7 +58,7 @@ public class Fan {
         if (this.on){
             return "FanSpeed : " + this.getSpeed() + " FanColor : " + this.getColor();
         }else {
-            return getOn();
+            return "This fan is OFF";
         }
     }
 }

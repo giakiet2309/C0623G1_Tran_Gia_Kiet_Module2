@@ -11,6 +11,6 @@ public class Bt_2StopWatch {
             System.out.println(i);
         }
         watch.stop();
-        System.out.println(watch.getElapsedtime());
+        System.out.println("Thời gian thực thi của chương trình là " + watch.getElapsedtime() + "ms");
     }
 }

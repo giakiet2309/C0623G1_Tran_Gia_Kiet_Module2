@@ -24,7 +24,7 @@ public class StopWatch {
         this.endTime = System.currentTimeMillis();
     }
 
-    public String getElapsedtime() {
-        return "Thời gian thực thi của chương trình là " + (this.endTime - this.startTime) + "ms";
+    public long getElapsedtime() {
+        return (this.endTime - this.startTime);
     }
 }
