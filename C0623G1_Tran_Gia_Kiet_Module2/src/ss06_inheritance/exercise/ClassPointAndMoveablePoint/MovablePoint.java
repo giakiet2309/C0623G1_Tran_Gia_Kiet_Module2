@@ -1,8 +1,8 @@
 package ss06_inheritance.exercise.ClassPointAndMoveablePoint;
 
 public class MovablePoint extends Point {
-    float xSpeed;
-    float ySpeed;
+    private float xSpeed;
+    private float ySpeed;
 
     public MovablePoint() {
         this(0.0f, 0.0f);
@@ -16,8 +16,8 @@ public class MovablePoint extends Point {
     public MovablePoint(float x, float y, float xSpeed, float ySpeed) {
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
     }
 
     public float getxSpeed() {
@@ -46,11 +46,11 @@ public class MovablePoint extends Point {
     }
 
     public void move() {
-        this.x += this.xSpeed;
-        this.y += this.ySpeed;
+        this.setX(this.getX() + this.getxSpeed());
+        this.setY(this.getY() + this.getySpeed());
     }
 
     public String toString() {
-        return "Point x = " + this.x + " y = " + this.y + " / Speed " + this.xSpeed + " - " + this.ySpeed;
+        return "Point x = " + this.getX() + " y = " + this.getY() + " / Speed " + this.xSpeed + " - " + this.ySpeed;
     }
 }

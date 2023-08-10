@@ -8,9 +8,9 @@ public class Cylinder extends Circle {
     }
 
     public Cylinder(int radius, int height, String colour) {
-        this.radius = radius;
+        this.setRadius(radius);
         this.height = height;
-        this.colour = colour;
+        this.setColour(colour);
     }
 
     public int getHeight() {

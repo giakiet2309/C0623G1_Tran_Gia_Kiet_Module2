@@ -1,8 +1,8 @@
 package ss06_inheritance.exercise.CircleAndCylinder;
 
 public class Circle {
-    int radius;
-    String colour;
+    private int radius;
+    private  String colour;
 
     public Circle() {
         this(5, "Green");
