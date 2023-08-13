@@ -1,7 +1,7 @@
 package ss08_clean_code_and_refactoring.exercise;
 
 public class TennisGame {
-    public static String drawDislay(int playerScore) {
+    public static String drawMatch(int playerScore) {
         String resultDisplay;
         switch (playerScore) {
             case 0:
@@ -23,7 +23,7 @@ public class TennisGame {
         return resultDisplay;
     }
 
-    public static String winDislay(int player1Score, int player2Score) {
+    public static String winMatch(int player1Score, int player2Score) {
         int minusResult = player1Score - player2Score;
 
         if (minusResult == 1) {
@@ -57,9 +57,9 @@ public class TennisGame {
 
     public static String getScore(int player1Score, int player2Score) {
         if (player1Score == player2Score) {
-            return drawDislay(player1Score);
+            return drawMatch(player1Score);
         } else if (player1Score >= 4 || player2Score >= 4) {
-            return winDislay(player1Score, player2Score);
+            return winMatch(player1Score, player2Score);
         } else {
             return matchDisplay(player1Score) + " - " + matchDisplay(player2Score);
         }
