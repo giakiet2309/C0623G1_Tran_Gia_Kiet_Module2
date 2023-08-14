@@ -50,12 +50,12 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dob='" + dob + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
+                ", gender='" + gender + '\''
+                ;
     }
 }
 

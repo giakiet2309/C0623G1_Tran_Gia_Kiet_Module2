@@ -32,8 +32,8 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "classStudent='" + classStudent + '\'' +
+        return "Student{" + super.toString() +
+                ", classStudent='" + classStudent + '\'' +
                 ", point=" + point +
                 '}';
     }
