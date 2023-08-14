@@ -9,9 +9,9 @@ import java.util.List;
 public class StudentRepo implements IStudentRepo {
     private static List<Person> studentList = new ArrayList<>();
 static {
-    studentList.add(new Student("1","tran","23/09/1921","Nam","C02",69));
-    studentList.add(new Student("2","tran3","23/09/1923","Nam","C02",199));
-    studentList.add(new Student("3","tran2","23/09/1922","Nam","C02",89));
+    studentList.add(new Student("1","Khiêm","11/03/2006","Nam","C03",69));
+    studentList.add(new Student("2","Bảo","31/12/2000","Nam","C04",199));
+    studentList.add(new Student("3","Kiệt","23/09/2003","Nam","C05",89));
 }
     @Override
     public void addStudent(Person student) {

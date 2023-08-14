@@ -1,9 +1,14 @@
 package mvc_package.controller;
 
+import mvc_package.service.ITeacherService;
+import mvc_package.service.TeacherService;
+
 import java.util.Scanner;
 
 public class TeacherController {
+    private static ITeacherService teacherService = new TeacherService();
     public static void showTeacherController() {
+
         Scanner scanner = new Scanner(System.in);
         int select;
         do {
@@ -19,12 +24,15 @@ public class TeacherController {
 
             switch (select) {
                 case 1:
+                    teacherService.addTeacher();
                     break;
                 case 2:
                     break;
                 case 3:
+                    teacherService.displayTeacher();
                     break;
                 case 4:
+                    MainController.showMenu();
                     break;
                 case 0:
                     System.exit(0);
