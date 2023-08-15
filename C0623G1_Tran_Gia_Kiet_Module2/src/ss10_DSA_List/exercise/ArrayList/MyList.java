@@ -2,6 +2,8 @@ package ss10_DSA_List.exercise.ArrayList;
 
 import java.util.Arrays;
 
+import static sun.plugin2.os.windows.OSVERSIONINFOA.size;
+
 public class MyList<E> {
     private int size;
 
@@ -33,6 +35,9 @@ public class MyList<E> {
     public void add(int index, E element) {
         E[] newArr = (E[]) new Object[this.size + 1];
         int i = 0;
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
         for (; i < index; i++) {
             newArr[i] = this.elements[i];
         }
@@ -46,6 +51,9 @@ public class MyList<E> {
     public void remove(int index) {
         E[] newArr = (E[]) new Object[this.size - 1];
         int i = 0;
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
         for (; i < index; i++) {
             newArr[i] = this.elements[i];
         }
@@ -111,6 +119,9 @@ public class MyList<E> {
 
 
     public E getItemAtIndex(int index) {
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
         if (index < this.size) {
             return this.elements[index];
         }
@@ -118,7 +129,9 @@ public class MyList<E> {
     }
 
     public void clear() {
-        this.elements = null;
-        this.size = 0;
+        size = 0;
+        for (int i = 0; i < elements.length; i++) {
+            elements[i] = null;
+        }
     }
 }
