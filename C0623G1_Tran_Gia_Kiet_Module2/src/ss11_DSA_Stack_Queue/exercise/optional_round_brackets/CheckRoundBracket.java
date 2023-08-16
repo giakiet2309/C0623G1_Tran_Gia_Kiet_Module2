@@ -10,8 +10,12 @@ public class CheckRoundBracket {
         list.put('(', 0);
         list.put(')', 0);
         for (int i = 0; i < expression.length(); i++) {
-            if (expression.charAt(i) == '(') list.put('(', list.get('(') + 1);
-            if (expression.charAt(i) == ')') list.put(')', list.get(')') + 1);
+            if (expression.charAt(i) == '(') {
+                list.put('(', list.get('(') + 1);
+            }
+            if (expression.charAt(i) == ')') {
+                list.put(')', list.get(')') + 1);
+            }
         }
         int check = list.get('(') - list.get(')');
         if (check == 0) {
