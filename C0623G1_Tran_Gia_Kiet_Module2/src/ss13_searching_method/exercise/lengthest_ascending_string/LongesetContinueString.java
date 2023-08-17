@@ -16,7 +16,7 @@ public class LongesetContinueString {
                     break;
                 }
             }
-//            System.out.println(temp);
+            System.out.println(temp);
             if (temp.size() > max.size()) {
                 max.clear();
                 max.addAll(temp);
