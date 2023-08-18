@@ -1,5 +1,7 @@
 package ss13_searching_method.exercise.ascending_string;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AscendingString {
@@ -12,17 +14,28 @@ public class AscendingString {
     }
 
     public static String searchAscendingString(String str) {
-        String newString = "";
-        int firstCharacter = str.charAt(0);
-        int character;
+//
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
-            character = str.charAt(i);
-            if (character >= firstCharacter) {
-                firstCharacter = character;
-                newString += str.charAt(i);
+            Character character = str.charAt(i);
+            String string = character + "";
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(j) >= character) {
+                    string += str.charAt(j);
+                    character = str.charAt(j);
+                }
+            }
+            list.add(string);
+        }
+        int max = list.get(0).length();
+        String result = list.get(0);
+        for (int i = 1; i < list.size(); i++) {
+            if (max < list.get(i).length()) {
+                max = list.get(i).length();
+                result = list.get(i);
             }
         }
-        System.out.println(newString);
-        return newString;
+        System.out.println("chuoi tang dan dai nhat " + result);
+        return result;
     }
 }
