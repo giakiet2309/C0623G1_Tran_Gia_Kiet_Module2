@@ -6,14 +6,16 @@ import java.util.ArrayList;
 
 public class ReadCsvFile {
     public static ArrayList<String[]> readCSVFile(String path) {
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
         ArrayList<String[]> list = new ArrayList<String[]>();
         try {
             File file = new File(path);
             if (!file.exists()) {
                 throw new FileNotFoundException();
             }
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] data = line.split(",");
@@ -26,6 +28,18 @@ public class ReadCsvFile {
             System.out.println("File không tồn tại");
         } catch (IOException e) {
             System.out.println(e);
+        } finally {
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if (fileReader != null) {
+                    fileReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         return list;
     }

@@ -5,5 +5,7 @@ public interface IProductService {
 
     void showDisplay();
 
-    void searchInfo();
+    void searchInfoByName();
+
+    void searchInfoById();
 }

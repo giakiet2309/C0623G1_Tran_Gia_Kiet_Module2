@@ -1,6 +1,8 @@
 package ss17_io_binary_file_and_serialization.exercise.product_management.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int id;
     private String name;
     private int price;
