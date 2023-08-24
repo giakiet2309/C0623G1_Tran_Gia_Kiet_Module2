@@ -1,58 +1,39 @@
 package ss17_io_binary_file_and_serialization.exercise.product_management.utils;
 
+import ss17_io_binary_file_and_serialization.exercise.product_management.model.Product;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWrite {
-    public static void write(String filePath, List<String> string) {
-        File file = new File(filePath);
-        FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
-        try {
-            fileWriter = new FileWriter(file);
-            bufferedWriter = new BufferedWriter(fileWriter);
-            for (String s : string) {
-                bufferedWriter.write(s);
-                bufferedWriter.newLine();
+    public static void writeFile(String path, List<Product> products) {
+        try (FileOutputStream fos = new FileOutputStream(path);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            for (Product product : products) {
+                oos.writeObject(product);
             }
+            oos.flush();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                bufferedWriter.close();
-                fileWriter.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            System.out.println(e.getMessage());
         }
-
     }
 
-    public static List<String> read(String filePath) {
-        File file = new File(filePath);
-        FileReader fileReader = null;
-        BufferedReader bufferedReader = null;
-        List<String> strings = new ArrayList<>();
-        try {
-            fileReader = new FileReader(file);
-            bufferedReader = new BufferedReader(fileReader);
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                strings.add(line);
+    public static List<Product> readFile(String path) {
+        List<Product> products = new ArrayList<>();
+        try (FileInputStream fis = new FileInputStream(path);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            while (fis.available() > 0) {
+                Product product = (Product) ois.readObject();
+                products.add(product);
             }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                bufferedReader.close();
-                fileReader.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            System.out.println(e.getMessage());
         }
-        return strings;
+        return products;
     }
 }
