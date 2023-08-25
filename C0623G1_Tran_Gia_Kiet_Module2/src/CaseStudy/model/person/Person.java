@@ -1,0 +1,95 @@
+package CaseStudy.model.person;
+
+import java.time.LocalDate;
+
+public class Person {
+    private String id;
+    private String name;
+    private LocalDate date;
+    private String gender;
+    private String citizenId;
+    private String telephone;
+    private String email;
+
+    public Person() {
+    }
+
+    public Person(String id, String name, LocalDate date, String gender, String citizenId, String telephone, String email) {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.gender = gender;
+        this.citizenId = citizenId;
+        this.telephone = telephone;
+        this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCitizenId() {
+        return citizenId;
+    }
+
+    public void setCitizenId(String citizenId) {
+        this.citizenId = citizenId;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                ", gender='" + gender + '\'' +
+                ", citizenId='" + citizenId + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+}
