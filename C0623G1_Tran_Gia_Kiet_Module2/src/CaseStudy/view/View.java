@@ -1,6 +1,6 @@
 package CaseStudy.view;
 
-import controller.FuramaController;
+import CaseStudy.controller.FuramaController;
 
 public class View {
     public static void main(String[] args) {
