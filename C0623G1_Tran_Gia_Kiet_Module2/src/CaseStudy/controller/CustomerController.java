@@ -2,18 +2,17 @@ package CaseStudy.controller;
 
 import java.util.Scanner;
 
-public class EmployeeController {
-
-    public static void showMenuEmployee() {
+public class CustomerController {
+    public static void showMenuCustomer() {
         Scanner scanner = new Scanner(System.in);
         int select = 0;
         do {
-            System.out.println("======Employee Manager======");
-            System.out.println("1. Display list employee");
-            System.out.println("2. Add new employee");
-            System.out.println("3. Edit employee");
-            System.out.println("4. Delete employee");
-            System.out.println("5. Search by name employee");
+            System.out.println("======Customer Manager======");
+            System.out.println("1. Display list customer");
+            System.out.println("2. Add new customer");
+            System.out.println("3. Edit customer");
+            System.out.println("4. Delete customer");
+            System.out.println("5. Search by name customer");
             System.out.println("6. Return main menu");
             System.out.println("Choose number : ");
             try {
@@ -25,8 +24,10 @@ public class EmployeeController {
                 case 1:
                     break;
                 case 2:
+
                     break;
                 case 3:
+
                     break;
                 case 4:
                     break;

@@ -2,18 +2,17 @@ package CaseStudy.controller;
 
 import java.util.Scanner;
 
-public class EmployeeController {
-
-    public static void showMenuEmployee() {
+public class BookingController {
+    public static void showMenuBooking() {
         Scanner scanner = new Scanner(System.in);
         int select = 0;
         do {
-            System.out.println("======Employee Manager======");
-            System.out.println("1. Display list employee");
-            System.out.println("2. Add new employee");
-            System.out.println("3. Edit employee");
-            System.out.println("4. Delete employee");
-            System.out.println("5. Search by name employee");
+            System.out.println("======Booking Manager======");
+            System.out.println("1. Add new booking");
+            System.out.println("2. Display list booking");
+            System.out.println("3. Create new contracts");
+            System.out.println("4. Display list contracts");
+            System.out.println("5. Edit contracts");
             System.out.println("6. Return main menu");
             System.out.println("Choose number : ");
             try {

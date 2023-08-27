@@ -2,19 +2,15 @@ package CaseStudy.controller;
 
 import java.util.Scanner;
 
-public class EmployeeController {
-
-    public static void showMenuEmployee() {
+public class PromotionController {
+    public static void showMenuPromotion() {
         Scanner scanner = new Scanner(System.in);
         int select = 0;
         do {
-            System.out.println("======Employee Manager======");
-            System.out.println("1. Display list employee");
-            System.out.println("2. Add new employee");
-            System.out.println("3. Edit employee");
-            System.out.println("4. Delete employee");
-            System.out.println("5. Search by name employee");
-            System.out.println("6. Return main menu");
+            System.out.println("======Promotion Manager======");
+            System.out.println("1.Display list customers use service");
+            System.out.println("2.Display list customers get voucher");
+            System.out.println("3. Return main menu");
             System.out.println("Choose number : ");
             try {
                 select = Integer.parseInt(scanner.nextLine());
@@ -28,15 +24,10 @@ public class EmployeeController {
                     break;
                 case 3:
                     break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
                 default:
                     System.out.println("Try again !");
             }
         } while (true);
     }
 }
+
