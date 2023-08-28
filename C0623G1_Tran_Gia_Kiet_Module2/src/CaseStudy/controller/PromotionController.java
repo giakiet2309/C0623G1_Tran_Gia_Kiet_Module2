@@ -23,6 +23,7 @@ public class PromotionController {
                 case 2:
                     break;
                 case 3:
+                    FuramaController.displayMainMenu();
                     break;
                 default:
                     System.out.println("Try again !");

@@ -29,8 +29,7 @@ public class FacilityController {
                 case 4:
                     break;
                 case 5:
-                    break;
-                case 6:
+                    FuramaController.displayMainMenu();
                     break;
                 default:
                     System.out.println("Try again !");

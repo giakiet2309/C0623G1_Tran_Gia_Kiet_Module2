@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Person {
     private String id;
     private String name;
-    private LocalDate date;
+    private String date;
     private String gender;
     private String citizenId;
     private String telephone;
@@ -14,7 +14,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(String id, String name, LocalDate date, String gender, String citizenId, String telephone, String email) {
+    public Person(String id, String name, String date, String gender, String citizenId, String telephone, String email) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -40,11 +40,11 @@ public class Person {
         this.name = name;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

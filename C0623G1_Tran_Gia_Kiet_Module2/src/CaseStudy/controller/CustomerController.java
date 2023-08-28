@@ -34,6 +34,7 @@ public class CustomerController {
                 case 5:
                     break;
                 case 6:
+                    FuramaController.displayMainMenu();
                     break;
                 default:
                     System.out.println("Try again !");

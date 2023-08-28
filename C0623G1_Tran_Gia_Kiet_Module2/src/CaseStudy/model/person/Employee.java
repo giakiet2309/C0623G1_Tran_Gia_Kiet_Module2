@@ -10,7 +10,7 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String id, String name, LocalDate date, String gender, String citizenId, String telephone, String email, String educationLevel, String position, double salary) {
+    public Employee(String id, String name, String date, String gender, String citizenId, String telephone, String email, String educationLevel, String position, double salary) {
         super(id, name, date, gender, citizenId, telephone, email);
         this.educationLevel = educationLevel;
         this.position = position;

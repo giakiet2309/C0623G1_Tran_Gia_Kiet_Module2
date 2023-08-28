@@ -1,6 +1,6 @@
 package CaseStudy.model.furama;
 
-public class Facility {
+public abstract class Facility {
     private String serviceCode;
     private String serviceName;
     private Double area;
