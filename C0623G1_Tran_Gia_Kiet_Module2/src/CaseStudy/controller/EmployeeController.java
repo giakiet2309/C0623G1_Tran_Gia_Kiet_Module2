@@ -34,10 +34,13 @@ public class EmployeeController {
                     employeeService.add();
                     break;
                 case 3:
+                    employeeService.editEmployee();
                     break;
                 case 4:
+                    employeeService.delete();
                     break;
                 case 5:
+                    employeeService.searchNameEmployee();
                     break;
                 case 6:
                     FuramaController.displayMainMenu();

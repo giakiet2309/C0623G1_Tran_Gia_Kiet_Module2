@@ -5,7 +5,10 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
+
 public class Validator {
+
+
     public static boolean validateName(String name) {
         String[] parts = name.split(" ");
         if (parts.length < 2) {
@@ -31,4 +34,6 @@ public class Validator {
         Period period = Period.between(dob, today);
         return period.getYears() >= 18;
     }
+
+
 }

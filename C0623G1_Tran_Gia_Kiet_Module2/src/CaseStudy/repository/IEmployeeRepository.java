@@ -2,8 +2,10 @@ package CaseStudy.repository;
 
 import CaseStudy.model.person.Employee;
 
-public interface IEmployeeRepository extends IFurameRepo<Employee> {
-    void editEmployee();
+import java.util.List;
 
-    void searchNameEmployee();
+public interface IEmployeeRepository extends IFurameRepo<Employee> {
+    void editEmployee(String id , Employee employee);
+
+    List<Employee> searchNameEmployee(String string);
 }

@@ -17,9 +17,12 @@ public class FacilityRepository implements IFacilityRepository {
     }
 
     @Override
-    public void delete(Facility facility) {
+    public boolean delete(String id) {
 
+        return false;
     }
+
+
 
     @Override
     public List<Facility> display() {

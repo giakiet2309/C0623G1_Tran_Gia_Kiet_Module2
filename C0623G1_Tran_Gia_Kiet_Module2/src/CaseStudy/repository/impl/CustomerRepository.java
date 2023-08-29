@@ -23,9 +23,10 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public void delete(Customer customer) {
-
+    public boolean delete(String id) {
+        return false;
     }
+
 
     @Override
     public List<Customer> display() {

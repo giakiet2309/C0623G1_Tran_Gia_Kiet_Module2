@@ -2,7 +2,7 @@ package CaseStudy.model.person;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person {
     private String id;
     private String name;
     private String date;
