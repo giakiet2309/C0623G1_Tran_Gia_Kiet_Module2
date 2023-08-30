@@ -71,7 +71,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     public List<Employee> display() {
         List<String> stringList = ReadAndWrite.read(FILE_PATH);
         List<Employee> employeeList = new ArrayList<>();
-        String[] arr = null;
+        String[] arr ;
         for (String p : stringList) {
             arr = p.split(",");
             employeeList.add(new Employee(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8], Double.parseDouble(arr[9])));
@@ -82,7 +82,11 @@ public class EmployeeRepository implements IEmployeeRepository {
     public static List<String> converToString(List<Employee> employeeList) {
         List<String> stringList = new ArrayList<>();
         for (Employee employee : employeeList) {
-            stringList.add(employee.getId() + "," + employee.getName() + "," + employee.getDate() + "," + employee.getGender() + "," + employee.getCitizenId() + "," + employee.getTelephone() + "," + employee.getEmail() + "," + employee.getEducationLevel() + "," + employee.getPosition() + "," + employee.getSalary());
+            stringList.add(employee.getId() + "," + employee.getName() + ","
+                    + employee.getDate() + "," + employee.getGender() + "," + employee.getCitizenId()
+                    + "," + employee.getTelephone() + "," + employee.getEmail() + ","
+                    + employee.getEducationLevel() + "," + employee.getPosition() + ","
+                    + employee.getSalary());
         }
         return stringList;
     }

@@ -12,6 +12,7 @@ public class Regex {
     private static String isMale = "^Nam$|^Nữ$";
     private static String email = "^.+@.+\\.com\\.?";
 
+    private static String educationCustomer = "^Diamond$|^Platinum$|^Gold$|^Silver$|^Member$";
     private static String education = "^Trung Cấp$|^Cao Đẳng$|^Đại Học$|^Sau Đại Học$";
     private static String employeeType = "^Lễ Tân$|^Phục Vụ$|^Chuyên Viên$|^Giám Sát$|^Quản Lý$|^Giám Đốc$";
 
@@ -61,6 +62,9 @@ public class Regex {
 
     public static boolean checkEducation(String text) {
         return checkCode(education, text);
+    }
+    public static boolean checkEducationCustomer(String text) {
+        return checkCode(educationCustomer, text);
     }
 
     public static boolean checkEmployeeType(String text) {

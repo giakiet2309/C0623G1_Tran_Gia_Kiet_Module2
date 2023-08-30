@@ -13,7 +13,9 @@ import java.util.Scanner;
 
 public class EmployeeService implements IEmployeeService {
     Scanner scanner = new Scanner(System.in);
-    private EmployeeRepository employeeRepository = new EmployeeRepository();
+
+    private static EmployeeService employeeService = new EmployeeService();
+    private static EmployeeRepository employeeRepository = new EmployeeRepository();
 
     @Override
     public void editEmployee() {
@@ -27,30 +29,28 @@ public class EmployeeService implements IEmployeeService {
         String newPosition;
         String sub = "";
         double newPrice;
-        boolean checkName = false;
-        boolean checkAge = false;
-        boolean checkGender = false;
-        boolean checkIdentityNumber = false;
-        boolean checkTelephone = false;
-        boolean checkPrice = false;
+        boolean check;
+
         System.out.println("Nhập ID của nhân viên muốn sửa");
         String id = scanner.nextLine();
         if (employeeRepository.checkId(id)) {
             do {
-                System.out.println("Nhập tên của nhân viên vào đây ");
+                check = false;
+                System.out.println("Nhập tên mới của nhân viên vào đây ");
                 newName = scanner.nextLine();
                 if (Validator.validateName(newName)) {
-                    checkName = true;
+                    check = true;
                 } else {
                     System.out.println("Tên không đúng định dạng");
                 }
-            } while (!checkName);
+            } while (!check);
             do {
                 try {
-                    System.out.println("Nhập ngày tháng năm sinh của nhân viên vào đây");
+                    check = false;
+                    System.out.println("Nhập ngày tháng năm sinh của nhân viên mới vào đây");
                     newAge = scanner.nextLine();
                     if (Validator.validateAge(newAge)) {
-                        checkAge = true;
+                        check = true;
                     } else {
                         System.out.println("Tuổi nhân viên phải đủ 18 ");
                     }
@@ -58,34 +58,37 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println(" Ngày tháng gì đấy ?? ");
                 }
 
-            } while (!checkAge);
+            } while (!check);
             do {
-                System.out.println("Nhập Giới tính nhân viên vào đây" + sub + ",Nam-1/Nữ-2");
+                check = false;
+                System.out.println("Nhập Giới tính nhân viên mới vào đây" + sub + ",Nam-1/Nữ-2");
                 newGender = scanner.nextLine();
                 if (Regex.checkIsMale(newGender)) {
-                    checkGender = true;
+                    check = true;
                 } else {
                     System.out.println("gì đấy");
                 }
-            } while (!checkGender);
+            } while (!check);
             do {
-                System.out.println("Nhập CMND nhân viên vào đây");
+                check = false;
+                System.out.println("Nhập CMND nhân viên mới vào đây");
                 newIdentityNumber = scanner.nextLine();
                 if (Regex.validateIdentNumber(newIdentityNumber)) {
-                    checkIdentityNumber = true;
+                    check = true;
                 } else {
                     System.out.println("CMND phải đủ 9 hoặc 12 số");
                 }
-            } while (!checkIdentityNumber);
+            } while (!check);
             do {
-                System.out.println("Nhập số điện thoại nhân viên vào đây");
+                check = false;
+                System.out.println("Nhập số điện thoại nhân viên mới vào đây");
                 newTelephone = scanner.nextLine();
                 if (Regex.validatePhoneNumber(newTelephone)) {
-                    checkTelephone = true;
+                    check = true;
                 } else {
                     System.out.println("SĐT phải bắt đầu từ 0 và đủ 10 số");
                 }
-            } while (!checkTelephone);
+            } while (!check);
             while (true) {
                 System.out.println("Mời nhập vào email" + sub);
                 newEmail = scanner.nextLine();
@@ -111,6 +114,7 @@ public class EmployeeService implements IEmployeeService {
                 System.err.println(newPosition + "Không hợp lệ");
             }
             do {
+                check = false;
                 System.out.println("Nhập số tiền lương vào đây");
                 newPrice = Double.parseDouble(scanner.nextLine());
                 if (newPrice <= 0) {
@@ -119,11 +123,12 @@ public class EmployeeService implements IEmployeeService {
                     System.out.println("Sửa Nhân viên thành công !");
                     break;
                 }
-            } while (!checkPrice);
+            } while (!check);
             Employee employee = new Employee(id, newName, newAge, newGender, newIdentityNumber, newTelephone, newEmail, newLevel, newPosition, newPrice);
             employeeRepository.editEmployee(id, employee);
         } else {
             System.out.println("Id không tồn tại");
+            employeeService.editEmployee();
         }
     }
 
@@ -144,6 +149,7 @@ public class EmployeeService implements IEmployeeService {
             System.out.println("Xóa thành công");
         } else {
             System.out.println("Không tìm thấy ID");
+            employeeService.delete();
         }
     }
 
@@ -161,72 +167,72 @@ public class EmployeeService implements IEmployeeService {
         String position;
         String sub = "";
         double price;
-        boolean checkId = false;
-        boolean checkName = false;
-        boolean checkAge = false;
-        boolean checkGender = false;
-        boolean checkIdentityNumber = false;
-        boolean checkTelephone = false;
-        boolean checkPrice = false;
+        boolean check;
         do {
+            check = false;
             System.out.println("Nhập mã nhân viên vào đây");
             id = scanner.nextLine();
             if (Regex.validateEmployeeId(id)) {
-                checkId = true;
+                check = true;
             } else {
                 System.out.println("Id không đúng định dạng");
             }
-        } while (!checkId);
+        } while (!check);
         do {
+            check = false;
             System.out.println("Nhập tên của nhân viên vào đây ");
             name = scanner.nextLine();
             if (Validator.validateName(name)) {
-                checkName = true;
+                check = true;
             } else {
                 System.out.println("Tên không đúng định dạng");
             }
-        } while (!checkName);
+        } while (!check);
         do {
+            check = false;
             try {
                 System.out.println("Nhập ngày tháng năm sinh của nhân viên vào đây");
                 age = scanner.nextLine();
                 if (Validator.validateAge(age)) {
-                    checkAge = true;
+                    check = true;
                 } else {
-                    System.out.println("Tuổi nhân viên phải đủ 18 ");
+                    System.out.println("Tuổi nhân viên phải 18 trở lên ");
                 }
             } catch (DateTimeParseException e) {
-                System.out.println(" Ngày tháng gì đấy ?? ");
+                System.out.println(" Ngày tháng gì đấy ?? VD : dd/MM/yyyy ");
             }
 
-        } while (!checkAge);
+        } while (!check);
         do {
+            check = false;
             System.out.println("Nhập Giới tính nhân viên vào đây" + sub + ",Nam-1/Nữ-2");
             gender = scanner.nextLine();
             if (Regex.checkIsMale(gender)) {
-                checkGender = true;
+                check = true;
             } else {
                 System.out.println("gì đấy");
             }
-        } while (!checkGender);
+        } while (!check);
         do {
+            check = false;
             System.out.println("Nhập CMND nhân viên vào đây");
             identityNumber = scanner.nextLine();
             if (Regex.validateIdentNumber(identityNumber)) {
-                checkIdentityNumber = true;
+                check = true;
             } else {
                 System.out.println("CMND phải đủ 9 hoặc 12 số");
             }
-        } while (!checkIdentityNumber);
+        } while (!check);
         do {
+            check = false;
             System.out.println("Nhập số điện thoại nhân viên vào đây");
             telephone = scanner.nextLine();
             if (Regex.validatePhoneNumber(telephone)) {
-                checkTelephone = true;
+                check = true;
             } else {
                 System.out.println("SĐT phải bắt đầu từ 0 và đủ 10 số");
             }
-        } while (!checkTelephone);
+        } while (!check);
         while (true) {
             System.out.println("Mời nhập vào email" + sub);
             email = scanner.nextLine();
@@ -252,6 +258,7 @@ public class EmployeeService implements IEmployeeService {
             System.err.println(position + "Không hợp lệ");
         }
         do {
+            check = false;
             System.out.println("Nhập số tiền lương vào đây");
             price = Double.parseDouble(scanner.nextLine());
             if (price <= 0) {
@@ -260,7 +267,7 @@ public class EmployeeService implements IEmployeeService {
                 System.out.println("ADD Nhân viên thành công !");
                 break;
             }
-        } while (!checkPrice);
+        } while (!check);
         Employee employee = new Employee(id, name, age, gender, identityNumber, telephone, email, level, position, price);
         employeeRepository.add(employee);
     }

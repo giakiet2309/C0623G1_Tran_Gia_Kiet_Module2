@@ -1,9 +1,12 @@
 package CaseStudy.repository;
 
 import CaseStudy.model.person.Customer;
+import CaseStudy.model.person.Employee;
+
+import java.util.List;
 
 public interface ICustomerRepository extends IFurameRepo<Customer> {
-    void editCustomer();
+    void editCustomer(String id , Customer customer);
 
-    void searchNameCustomer();
+    List<Customer> searchNameCustomer(String string);
 }
